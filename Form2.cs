@@ -274,7 +274,7 @@ namespace SpielParadies
             score += wachstum;
             txtScore.Text = "Score: " + score;
 
-            // Mehrere Körperteile anhängen
+            // Schlange verlängern
             for (int i = 0; i < wachstum; i++)
             {
                 Circle body = new Circle
@@ -285,9 +285,11 @@ namespace SpielParadies
                 Snake.Add(body);
             }
 
-            // Nur den richtigen Apfel neu setzen
             if (typ == "normal")
             {
+                normalFoodCounter++; // Hochzählen bei normalen Äpfeln
+
+                // Neuen normalen Apfel platzieren
                 bool validFood = false;
                 while (!validFood)
                 {
@@ -298,7 +300,6 @@ namespace SpielParadies
                     };
 
                     validFood = true;
-
                     foreach (var part in Snake)
                     {
                         if (part.X == food.X && part.Y == food.Y)
@@ -308,16 +309,26 @@ namespace SpielParadies
                         }
                     }
                 }
+
+                // Nach jedem 5. normalen Apfel: megaFood setzen
+                if (normalFoodCounter >= 5)
+                {
+                    megaFood = new Circle
+                    {
+                        X = rand.Next(2, maxWidth),
+                        Y = rand.Next(2, maxHeight)
+                    };
+
+                    normalFoodCounter = 0;
+                }
             }
             else if (typ == "mega")
             {
-                megaFood = new Circle
-                {
-                    X = rand.Next(2, maxWidth),
-                    Y = rand.Next(2, maxHeight)
-                };
+                // mega Apfel wurde gegessen → löschen
+                megaFood = null;
             }
         }
+
 
         Circle megaFood = new Circle(); // oder: = null; (dann später initialisieren)
 
