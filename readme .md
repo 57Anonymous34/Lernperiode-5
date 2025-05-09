@@ -22,20 +22,21 @@ Bei meinem SQL habe ich eine Datenbank mit dem Namen GamersParadise erstellt und
 
 ## 9.5 Kernfunktionalität
 
-- [ ] Datenmodell von der Snake Tabelle zeichnen (dieses AP sollte zur Hälfte offline, also ohne Laptop zu bearbeiten sein — beispielsweise ein Datenmodell?)
-- [ ] Der Mega Apfel sollte seltener auftauchen und nicht so oft.(Erst nach 5 normale àpfel kommt ein Mega Apfel)
-- [ ] C# mit SQL verbinden 
+- [x] Datenmodell von der Snake Tabelle zeichnen (dieses AP sollte zur Hälfte offline, also ohne Laptop zu bearbeiten sein — beispielsweise ein Datenmodell?)
+- [x] Der Spieler sollte sich bevor man das Spiel startet noch seinen Namen eingeben.
+- [x] C# mit SQL verbinden 
 
 ✍️ Heute habe ich... (50-100 Wörter)
+Heute habe ich die SQL-Tabelle in C# eingebunden. Ich habe eine Folie erstellt, in der der Benutzer gefragt wird, wie er heißt, damit der Name des Spielers in der Tabelle gespeichert werden kann. Der goldene Apfel erscheint jetzt viel seltener als früher. Der Spieler muss erst 5 normale Äpfel essen, bevor der goldene Apfel auftaucht.
 
 ☝️ Vergessen Sie nicht, bis einen ersten Code auf github hochzuladen
 
 ## 16.5 Kernfunktionalität und Ausbau
 
-- [ ] ...
-- [ ] ...
-- [ ] ...
-- [ ] ...
+- [ ] Beim Verlieren von Snake sollte groß "Game Over" stehen, und darunter sollte man das Spiel neustarten können.
+- [ ] Die Eingabeseite sollte verschönert werden.(Ein Bild oder Fraben hinzufügen)
+- [ ] Spielerdaten wie Name, Score, Time und Datum sollten gespeichert werden.
+- [ ] Snake verschönern(Hintergrund oder Farebn hinzufügen)
 
 ✍️ Heute habe ich... (50-100 Wörter)
 
