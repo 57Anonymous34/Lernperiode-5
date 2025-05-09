@@ -36,7 +36,7 @@ Heute habe ich die SQL-Tabelle in C# eingebunden. Ich habe eine Folie erstellt, 
 - [ ] Beim Verlieren von Snake sollte groß "Game Over" stehen, und darunter sollte man das Spiel neustarten können.
 - [ ] Die Eingabeseite sollte verschönert werden.(Ein Bild oder Fraben hinzufügen)
 - [ ] Spielerdaten wie Name, Score, Time und Datum sollten gespeichert werden.
-- [ ] Snake verschönern(Hintergrund oder Farebn hinzufügen)
+- [ ] Snake verschönern(Hintergrund oder Farben hinzufügen)
 
 ✍️ Heute habe ich... (50-100 Wörter)
 
