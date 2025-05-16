@@ -39,6 +39,7 @@ Heute habe ich die SQL-Tabelle in C# eingebunden. Ich habe eine Folie erstellt, 
 - [ ] Snake verschönern(Hintergrund oder Farben hinzufügen)
 
 ✍️ Heute habe ich... (50-100 Wörter)
+Heute habe ich noch das "Game Over" Label hinzugefügt. Leider konnte ich nicht mehr machen. Ich habe versucht, SQL und C# zu verbinden, doch leider ohne Erfolg. Ich habe sogar die Datenbank gelöscht, um eine neue zu erstellen, doch als ich eine neue erstellen wollte, hat es bei mir nicht funktioniert.
 
 ☝️ Vergessen Sie nicht, bis einen ersten Code auf github hochzuladen
 
