@@ -8,11 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
-
+using Microsoft.Data.Sqlite;
 namespace SpielParadies
 {
+
+
+   
+
+
+
     public partial class Form2 : Form
     {
+
+
         private List<Circle> Snake = new List<Circle>();
         private Circle food = new Circle();
 
@@ -29,14 +37,35 @@ namespace SpielParadies
         bool goLeft, goRight, goDown, goUp;
 
         SpielAuswahl parent;
-        public Form2(SpielAuswahl parent)
+        private string spielername;
+        public Form2(SpielAuswahl parent, string spielername)
         {
             InitializeComponent();
             this.parent = parent;
             this.KeyPreview = true;
+            this.spielername = spielername;
+        
 
             this.KeyPreview = true; // Wichtig für Tasteneingabe
             this.KeyDown += KeyIsDown; // Das VERBINDET die Tasten mit dem Code
+
+
+            using (var connection = new Microsoft.Data.Sqlite.SqliteConnection("Data Source=C:\\Users\\Amar0\\source\\repos\\SpielParadies\\SpielParadies\\bin\\Debug\\net8.0-windows\\GamersParadise.db"))
+            {
+                
+                connection.Open();
+                var command = connection.CreateCommand();
+                command.CommandText = @"
+        CREATE TABLE IF NOT EXISTS Snake (
+            Id INTEGER PRIMARY KEY AUTOINCREMENT,
+            Player TEXT NOT NULL,
+            Score INTEGER NOT NULL,
+            Time INTEGER NOT NULL,
+            Date TEXT NOT NULL
+        );";
+                command.ExecuteNonQuery();
+            }
+
 
 
         }
@@ -168,7 +197,7 @@ namespace SpielParadies
                             GameOver();
                         }
                     }
-                    
+
                 }
                 else
                 {
@@ -266,7 +295,9 @@ namespace SpielParadies
             };
 
 
-
+            // ❗ Game Over Label & Restart Button verstecken
+            lblGameOver.Visible = false;
+            button2.Visible = false;
         }
 
         private void EatFood(int wachstum, string typ)
@@ -335,7 +366,7 @@ namespace SpielParadies
 
         private void GameOver()
         {
-
+            InsertHighscore(spielername, score, spielSekunden, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
             startButton.Enabled = true;
 
             if (score > highScore)
@@ -349,7 +380,45 @@ namespace SpielParadies
             }
             timer1.Stop();
             gametimer.Stop();
+
+
+            lblGameOver.Visible = true;
+            button2.Visible = true;  //
+
+
+
         }
+
+
+        private void InsertHighscore(string player, int score, int time, string date)
+        {
+            try
+            {
+                using (var connection = new Microsoft.Data.Sqlite.SqliteConnection("Data Source=GamersParadise.db"))
+                {
+                    connection.Open();
+
+                    var command = connection.CreateCommand();
+                    command.CommandText = @"
+                INSERT INTO Snake (Player, Score, Time, Date)
+                VALUES ($player, $score, $time, $date);
+            ";
+
+                    command.Parameters.AddWithValue("$player", player);
+                    command.Parameters.AddWithValue("$score", score);
+                    command.Parameters.AddWithValue("$time", time);
+                    command.Parameters.AddWithValue("$date", date);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fehler beim Speichern des Highscores: " + ex.Message);
+            }
+        }
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -391,6 +460,69 @@ namespace SpielParadies
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            RestartGame();
+            lblGameOver.Visible = false; // "Game Over" ausblenden
+            button2.Visible = false;  // Restart-Button ausblenden
+
+            timer1.Start();     // Timer für Spielzeit
+            gametimer.Start();  // Timer für Snake-Bewegung
+
+        }
+
+
+
+
+
+        private List<(string Player, int Score, int Time, string Date)> GetHighscores()
+        {
+            var highscores = new List<(string, int, int, string)>();
+            using (var conn = new SqliteConnection("Data Source=GamersParadise.db"))
+            {
+                conn.Open();
+                var cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT Player, Score, Time, Date FROM Snake ORDER BY Score DESC LIMIT 10";
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        highscores.Add((
+                            reader.GetString(0),    // Player
+                            reader.GetInt32(1),     // Score
+                            reader.GetInt32(2),     // Time
+                            reader.GetString(3)     // Date
+                        ));
+                    }
+                }
+            }
+            return highscores;
+        }
+
+
+        private void btnShowHighscores_Click(object sender, EventArgs e)
+        {
+            var highscores = GetHighscores();
+            var dt = new DataTable();
+            dt.Columns.Add("Player");
+            dt.Columns.Add("Score");
+            dt.Columns.Add("Time");
+            dt.Columns.Add("Date");
+
+            foreach (var hs in highscores)
+            {
+                dt.Rows.Add(hs.Player, hs.Score, hs.Time, hs.Date);
+            }
+
+            dataGridViewHighscores.DataSource = dt;
+        }
+
+
+       
+
+
+
     }
 }
 
