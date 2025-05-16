@@ -33,7 +33,7 @@ Heute habe ich die SQL-Tabelle in C# eingebunden. Ich habe eine Folie erstellt, 
 
 ## 16.5 Kernfunktionalität und Ausbau
 
-- [ ] Beim Verlieren von Snake sollte groß "Game Over" stehen, und darunter sollte man das Spiel neustarten können.
+- [X] Beim Verlieren von Snake sollte groß "Game Over" stehen, und darunter sollte man das Spiel neustarten können.
 - [ ] Die Eingabeseite sollte verschönert werden.(Ein Bild oder Fraben hinzufügen)
 - [ ] Spielerdaten wie Name, Score, Time und Datum sollten gespeichert werden.
 - [ ] Snake verschönern(Hintergrund oder Farben hinzufügen)
@@ -44,8 +44,8 @@ Heute habe ich die SQL-Tabelle in C# eingebunden. Ich habe eine Folie erstellt, 
 
 ## 23.5 Abschluss
 
-- [ ] ...
-- [ ] ... (falls Ihnen nichts einfällt: Können Sie mit einem PowerShell-Skript von Ihrer Datenbank regelmäßig ein *backup* erstellen?)
+- [ ]  Spielerdaten wie Name, Score, Time und Datum sollten gespeichert werden.
+- [ ] Eingabeseite  verschönern(Farbe hinzufügen)
 - [ ] Reflexion über Ihre Arbeitsweise
 - [ ] Beschreibung des fertigen Projekts mit .gif etc.
 
