@@ -15,6 +15,7 @@ Wie können Sie Ihr Projekt aus der Lernperiode 4 um eine Persistenz-Lösung erw
       verliert wird der Timer gestoppt)
 
 ✍️ Heute habe ich... (50-100 Wörter)
+
 Heute habe ich in C# einen Timer erstellt. Der Timer läuft erst, wenn das Spiel startet, und endet, wenn man verliert. Ich wollte noch einen Apfel hinzufügen, der mehr Punkte gibt, doch bin leider nicht fertig geworden.
 Bei meinem SQL habe ich eine Datenbank mit dem Namen GamersParadise erstellt und noch zusätzlich die Tabelle von Snake. Diese Tabelle enthält eine SpielerID, den Spielernamen, Punkte und noch die Zeit.
 
@@ -27,6 +28,7 @@ Bei meinem SQL habe ich eine Datenbank mit dem Namen GamersParadise erstellt und
 - [x] C# mit SQL verbinden 
 
 ✍️ Heute habe ich... (50-100 Wörter)
+
 Heute habe ich die SQL-Tabelle in C# eingebunden. Ich habe eine Folie erstellt, in der der Benutzer gefragt wird, wie er heißt, damit der Name des Spielers in der Tabelle gespeichert werden kann. Der goldene Apfel erscheint jetzt viel seltener als früher. Der Spieler muss erst 5 normale Äpfel essen, bevor der goldene Apfel auftaucht.
 
 ☝️ Vergessen Sie nicht, bis einen ersten Code auf github hochzuladen
@@ -39,6 +41,7 @@ Heute habe ich die SQL-Tabelle in C# eingebunden. Ich habe eine Folie erstellt, 
 - [ ] Snake verschönern(Hintergrund oder Farben hinzufügen)
 
 ✍️ Heute habe ich... (50-100 Wörter)
+
 Heute habe ich noch das "Game Over" Label hinzugefügt. Leider konnte ich nicht mehr machen. Ich habe versucht, SQL und C# zu verbinden, doch leider ohne Erfolg. Ich habe sogar die Datenbank gelöscht, um eine neue zu erstellen, doch als ich eine neue erstellen wollte, hat es bei mir nicht funktioniert.
 
 ☝️ Vergessen Sie nicht, bis einen ersten Code auf github hochzuladen
@@ -47,10 +50,12 @@ Heute habe ich noch das "Game Over" Label hinzugefügt. Leider konnte ich nicht 
 
 - [ ]  Spielerdaten wie Name, Score, Time und Datum sollten gespeichert werden.
 - [ ] Eingabeseite  verschönern(Farbe hinzufügen)
-- [ ] Reflexion über Ihre Arbeitsweise
+- [X] Reflexion über Ihre Arbeitsweise
 - [ ] Beschreibung des fertigen Projekts mit .gif etc.
 
 ✍️ Heute habe ich... (50-100 Wörter)
+
+Heute habe ich wieder versucht, den Fehler zu finden, doch leider ohne Erfolg. Ich weiß immer noch nicht, wo der Fehler liegt. Diese eine Seite konnte ich nicht bearbeiten, da mir jedes Mal die Eigenschaften dieser Seite nicht angezeigt werden. Ich habe Visual Studio mehrmals neu gestartet, trotzdem ging es bei mir nicht.
 
 ☝️ Vergessen Sie nicht, bis einen ersten Code auf github hochzuladen
 
@@ -58,6 +63,13 @@ Heute habe ich noch das "Game Over" Label hinzugefügt. Leider konnte ich nicht 
 
 ✍️ Beschreiben Sie hier, wie Ihr Projekt am Ende aussieht, und fügen Sie mindestens ein .gif ein.
 
+![Unbenanntes Video – Mit Clipchamp erstellt](https://github.com/user-attachments/assets/0420dcff-6913-497a-9f92-d09176ab9209)
+
+Der Benutzer muss seinen Namen eingeben, damit er spielen kann. Wenn der Benutzer das Spiel Snake spielt und dann verliert, wird sein Highscore angezeigt und eine Game Over-Seite wird angezeigt. Der Benutzer kann das Spiel neu starten oder auch verlassen. Sonst hat sich nichts verändert. Eigentlich mussten Name, Score, Zeit und Datum in einer Datenbank gespeichert werden, doch leider ging das bei mir nicht.
+
+
 ## Reflexion
 
 ✍️ Was ging gut, was ging weniger gut? Was haben Sie gelernt, und was würden Sie bei der nächsten Lernperiode versuchen besser zu machen? Fassen Sie auch einen übergeordneten Vorsatz für Ihr nächstes Jahr im Lernatelier (100 bis 200 Wörter).
+
+Diese Lernperiode hat mir sehr spass gemacht, da ich an meinem Projekt weiterarbeiten konnte. Ich habe eine Seite erstellt, die den Benutzer fragt, wie er heisst. Eine Game Over-Folie wird angezeigt, wenn ein Spieler bei dem Spiel Snake verliert. Das Wichtigste in dieser Lernperiode ist das Verbinden und Speichern in SQLite. Ich habe es immer wieder versucht, aber konnte den Fehler nicht finden, was echt schade ist, da ich das richtig cool gefunden hätte, wenn es funktioniert hätte. 
